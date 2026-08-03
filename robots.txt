@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mantuoluo909-cyber.github.io/gaodetec-website/sitemap.xml
