@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GAODETEC — Professional manufacturer of heavy-duty hydraulic jacks: TSTQ synchronous jacks (320T-2000T), CLL lock nut jacks (50T-1080T), RRH hollow jacks, post-tensioning systems. ISO 9001, CE, SGS certified.">
+  <title>GAODETEC | Heavy-Duty Hydraulic Jacks — Lifting & Post-Tensioning Solutions</title>
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-light: #132040;
+      --gold: #D4A853;
+      --gold-light: #E8C97A;
+      --white: #FFFFFF;
+      --gray-50: #F7F8FA;
+      --gray-100: #EDEFF2;
+      --gray-200: #DDE0E5;
+      --gray-500: #6B7280;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--gray-700);
+      line-height: 1.65;
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,22,40,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212,168,83,0.15);
+      height: 72px; display: flex; align-items: center; padding: 0 3rem;
+    }
+    .nav-inner { max-width: 1280px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
+    .nav-logo span { background: var(--gold); color: var(--navy); width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,0.7); font-size: 0.88rem; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 700 !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; }
+    .hamburger { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+    /* Section base */
+    .section { padding: 6rem 2rem; }
+    .section-alt { background: var(--gray-50); }
+    .section-dark { background: var(--navy); color: #fff; }
+    .container { max-width: 1240px; margin: 0 auto; }
+    .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
+    .title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+    .title-light { color: #fff; }
+    .subtitle { color: var(--gray-500); max-width: 620px; font-size: 1.08rem; margin-top: 0.75rem; }
+    .subtitle-light { color: rgba(255,255,255,0.6); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; position: relative;
+      background: linear-gradient(135deg, #0A1628 0%, #132040 40%, #0F1D35 100%);
+      overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; opacity: 0.12; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, transparent 0%, #0A1628 80%); }
+    .hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(212,168,83,0.12); border: 1px solid rgba(212,168,83,0.3); color: var(--gold); padding: 0.4rem 1.1rem; border-radius: 100px; font-size: 0.82rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -0.03em; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero p { color: rgba(255,255,255,0.55); font-size: 1.12rem; max-width: 480px; margin: 1.25rem 0 2rem; }
+    .hero-stats { display: flex; gap: 2.5rem; margin-bottom: 2rem; }
+    .hero-stat h3 { font-size: 2rem; font-weight: 900; color: var(--gold); }
+    .hero-stat small { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; }
+    .hero-img { display: flex; align-items: center; justify-content: center; }
+    .hero-img img { max-width: 100%; max-height: 420px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.25s; border: none; text-decoration: none; }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(212,168,83,0.35); }
+    .btn-outline { border: 1.5px solid rgba(255,255,255,0.2); color: #fff; background: transparent; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-outline-dark { border: 1.5px solid rgba(10,22,40,0.15); color: var(--navy); background: transparent; }
+    .btn-outline-dark:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+    .cert-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+    .cert-item { background: #fff; border: 1px solid var(--gray-200); border-radius: 8px; padding: 0.7rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.83rem; font-weight: 600; }
+    .cert-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .cert-dot.a { background: #D4A853; } .cert-dot.b { background: #3B82F6; } .cert-dot.c { background: #22C55E; } .cert-dot.d { background: #06B6D4; }
+
+    /* Products */
+    .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 2.5rem; }
+    .prod-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; box-shadow: var(--shadow-sm); }
+    .prod-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+    .prod-img { height: 220px; background: var(--gray-50); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .prod-img img { width: 100%; height: 100%; object-fit: contain; padding: 0.75rem; }
+    .prod-tag { position: absolute; top: 0.75rem; right: 0.75rem; background: var(--gold); color: var(--navy); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+    .prod-body { padding: 1.5rem; }
+    .prod-body h4 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+    .prod-body p { color: var(--gray-500); font-size: 0.88rem; margin-bottom: 1rem; line-height: 1.5; }
+    .prod-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .prod-tags span { background: #FFF7E6; color: #B8860B; border: 1px solid #FDE68A; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.73rem; font-weight: 600; }
+
+    /* Specs Tabs */
+    .tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2rem 0 1.5rem; }
+    .tab-btn { padding: 0.6rem 1.25rem; border: 1.5px solid var(--gray-200); border-radius: 8px; background: #fff; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--gray-500); transition: all 0.2s; }
+    .tab-btn.active, .tab-btn:hover { border-color: var(--gold); color: var(--gold); background: #FFFCF5; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--gray-200); border-radius: var(--radius); background: #fff; box-shadow: var(--shadow-sm); }
+    .table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .table-wrap thead { background: var(--navy); }
+    .table-wrap th { text-align: left; padding: 0.8rem 1rem; color: var(--gold); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+    .table-wrap td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--gray-100); }
+    .table-wrap tbody tr:hover { background: #FFFCF5; }
+    .table-wrap tbody tr td:first-child { font-weight: 700; color: var(--navy); }
+    .table-note { color: var(--gray-500); font-size: 0.82rem; margin-top: 0.75rem; }
+
+    /* Advantages */
+    .adv-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .adv-card { text-align: center; padding: 2rem 1.25rem; background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-200); transition: all 0.3s; }
+    .adv-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+    .adv-icon { width: 52px; height: 52px; background: #FFF7E6; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; }
+    .adv-card h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; }
+    .adv-card p { color: var(--gray-500); font-size: 0.85rem; line-height: 1.5; }
+
+    /* Apps */
+    .apps-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-top: 2rem; }
+    .app-item { text-align: center; padding: 1.5rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); transition: all 0.3s; }
+    .app-item:hover { border-color: var(--gold); background: rgba(212,168,83,0.08); }
+    .app-item .emoji { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+    .app-item span { font-size: 0.85rem; font-weight: 600; color: #fff; }
+
+    /* Gallery */
+    .gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 2rem; }
+    .gal-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; cursor: pointer; transition: transform 0.3s; border: 2px solid transparent; }
+    .gal-item:hover { transform: scale(1.03); border-color: var(--gold); }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.94); align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 4px; }
+    .lightbox .close { position: absolute; top: 1.5rem; right: 2rem; color: #fff; font-size: 2.2rem; cursor: pointer; background: none; border: none; }
+    .lightbox .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; font-size: 2.2rem; cursor: pointer; background: rgba(255,255,255,0.08); border: none; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lightbox .nav-btn:hover { background: rgba(255,255,255,0.2); }
+    .lightbox .prev { left: 2rem; } .lightbox .next { right: 2rem; }
+
+    /* Inquiry */
+    .inq-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; margin-top: 2.5rem; align-items: start; }
+    .form-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-md); }
+    .form-row { margin-bottom: 1rem; }
+    .form-row label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 0.35rem; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid var(--gray-200); border-radius: 7px; font-size: 0.92rem; font-family: inherit; color: var(--gray-900); transition: border-color 0.2s; background: var(--gray-50); }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: var(--gold); background: #fff; box-shadow: 0 0 0 3px rgba(212,168,83,0.1); }
+    .form-row textarea { resize: vertical; min-height: 110px; }
+    .contact-card { background: var(--navy); border-radius: var(--radius); padding: 2rem; color: #fff; }
+    .contact-card h4 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .contact-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .contact-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
+    .contact-row .icon { width: 40px; height: 40px; background: rgba(212,168,83,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+
+    /* Footer */
+    .footer { background: #080E1A; padding: 3rem 2rem 1.5rem; text-align: center; }
+    .footer .brand { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .footer p { color: rgba(255,255,255,0.35); font-size: 0.83rem; }
+
+    .toast { position: fixed; bottom: 2rem; right: 2rem; background: #059669; color: #fff; padding: 1rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transform: translateY(120px); opacity: 0; transition: all 0.3s; z-index: 2000; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    @media (max-width: 960px) {
+      .nav { padding: 0 1.5rem; }
+      .hero .container { grid-template-columns: 1fr; text-align: center; }
+      .hero p { margin-inline: auto; }
+      .hero-stats { justify-content: center; }
+      .hero-img { display: none; }
+      .prod-grid { grid-template-columns: 1fr 1fr; }
+      .adv-grid { grid-template-columns: 1fr 1fr; }
+      .apps-grid { grid-template-columns: repeat(3, 1fr); }
+      .gal-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-grid, .inq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .section { padding: 4rem 1.25rem; }
+      .prod-grid { grid-template-columns: 1fr; }
+      .adv-grid { grid-template-columns: 1fr; }
+      .apps-grid { grid-template-columns: repeat(2, 1fr); }
+      .gal-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: rgba(10,22,40,0.98); border-bottom: 1px solid rgba(212,168,83,0.15); padding: 1.5rem; gap: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo"><span>G</span>GAODETEC</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#specs">Specifications</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#inquiry" class="nav-cta">Get Quote</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"><img src="images/cll/cll_01.jpg" alt=""></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div>
+        <span class="hero-badge">&#9670; ISO 9001 &middot; CE &middot; SGS &middot; TUV Certified</span>
+        <h1>Heavy Lifting,<br><em>Engineered to Last</em></h1>
+        <p>GAODETEC manufactures professional hydraulic jacks and post-tensioning systems trusted on the world's most demanding infrastructure projects &mdash; from 50T lock nut jacks to 2000T synchronous lifting systems.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><h3>2000T</h3><small>Max Capacity</small></div>
+          <div class="hero-stat"><h3>15+</h3><small>Years Experience</small></div>
+          <div class="hero-stat"><h3>7</h3><small>Product Series</small></div>
+          <div class="hero-stat"><h3>50+</h3><small>Countries</small></div>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="#inquiry" class="btn btn-primary">Request a Quote &rarr;</a>
+          <a href="#products" class="btn btn-outline">View Products</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="images/cll/cll_05.jpg" alt="GAODETEC CLL Series hydraulic jacks lineup">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="label">About GAODETEC</div>
+      <div class="about-grid">
+        <div>
+          <h2 class="title">Engineered for the World's Toughest Jobs</h2>
+          <p class="subtitle">From bridge construction and high-rise buildings to offshore platforms and nuclear facilities, GAODETEC hydraulic jacks deliver precision, safety, and reliability at every lift.</p>
+          <p style="margin-top:1rem;color:var(--gray-500);">Our factory produces a comprehensive range of hydraulic equipment: synchronous lifting jacks up to 2000 tons, self-locking CLL jacks for sustained load holding, hollow-core RRH jacks for cable-stayed applications, multi-strand post-tensioning systems, and specialized flange jacks for press integration. Every unit is pressure-tested at 125% rated load and ships with full certification.</p>
+          <div class="cert-grid">
+            <div class="cert-item"><span class="cert-dot a"></span> SGS Certified</div>
+            <div class="cert-item"><span class="cert-dot b"></span> CE Mark</div>
+            <div class="cert-item"><span class="cert-dot c"></span> ISO 9001</div>
+            <div class="cert-item"><span class="cert-dot d"></span> TUV SUD</div>
+          </div>
+        </div>
+        <div>
+          <img src="images/hydraulic/page_01.png" alt="GAODETEC products overview" style="width:100%;border-radius:12px;border:1px solid var(--gray-200);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section section-alt" id="products">
+    <div class="container">
+      <div class="label">Product Lines</div>
+      <h2 class="title">Complete Range of Hydraulic Jacks</h2>
+      <p class="subtitle">Seven specialized series covering every lifting, tensioning, and industrial application.</p>
+
+      <div class="prod-grid">
+        <div class="prod-card">
+          <div class="prod-img"><img src="images/hydraulic/page_01.png" alt="TSTQ Synchronous Jack" loading="lazy"><span class="prod-tag">Flagship</span></div>
+          <div class="prod-body">
+            <h4>TSTQ / STQ Synchronous Jack</h4>
+            <p>Double acting, 63 MPa rated. Synchronous multi-point lifting for bridges, buildings, and heavy structures.</p>
+            <div class="prod-tags"><span>320&ndash;2000T</span><span>100&ndash;500mm Stroke</span><span>1.5&ndash;18kW Pump</span></div>
+            <a href="#specs" class="btn btn-outline-dark" style="font-size:0.82rem;padding:0.45rem 1rem;">View Specs &rarr;</a>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img"><img src="images/cll/cll_01.jpg" alt="CLL Lock Nut Jack" loading="lazy"><span class="prod-tag">Self-Locking</span></div>
+          <div class="prod-body">
+            <h4>CLL Lock Nut Jack</h4>
+            <p>Mechanical lock nut holds load after pressure release. Safe for underwater use. Built-in overload protection.</p>
+            <div class="prod-tags"><span>50&ndash;1080T</span><span>50&ndash;300mm Stroke</span><span>Underwater Ready</span></div>
+            <a href="#specs" class="btn btn-outline-dark" style="font-size:0.82rem;padding:0.45rem 1rem;">View Specs &rarr;</a>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img"><img src="images/hydraulic/page_07.png" alt="RRH Hollow Jack" loading="lazy"><span class="prod-tag">Hollow Core</span></div>
+          <div class="prod-body">
+            <h4>RRH Hollow Jack</h4>
+            <p>Center-hole design for cables and rebar. Ideal for cable-stayed bridges and ground anchoring.</p>
+            <div class="prod-tags"><span>30&ndash;150T</span><span>Hole &Phi;33&ndash;80mm</span><span>Stroke 38&ndash;257mm</span></div>
+            <a href="#specs" class="btn btn-outline-dark" style="font-size:0.82rem;padding:0.45rem 1rem;">View Specs &rarr;</a>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img"><img src="images/tension/page_01.png" alt="Multi-Strand Stressing Jack" loading="lazy"><span class="prod-tag">Precision</span></div>
+          <div class="prod-body">
+            <h4>Multi-Strand Stressing Jack</h4>
+            <p>Post-tensioning for bridge girders, LNG tanks, nuclear containment, and stay cable systems.</p>
+            <div class="prod-tags"><span>YDC 600&ndash;10000kN</span><span>Through Hole &Phi;58&ndash;260</span><span>200mm Stroke</span></div>
+            <a href="#specs" class="btn btn-outline-dark" style="font-size:0.82rem;padding:0.45rem 1rem;">View Specs &rarr;</a>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img"><img src="images/hydraulic/page_04.png" alt="Flange Hydraulic Jack" loading="lazy"><span class="prod-tag">Flange Mount</span></div>
+          <div class="prod-body">
+            <h4>Flange Hydraulic Jack</h4>
+            <p>Bolt-on flange base for press machines and permanent installations. Synchronous control ready.</p>
+            <div class="prod-tags"><span>Custom Capacities</span><span>Flange Base</span><span>Synchronous Ready</span></div>
+            <a href="#inquiry" class="btn btn-outline-dark" style="font-size:0.82rem;padding:0.45rem 1rem;">Inquire &rarr;</a>
+          </div>
+        </div>
+        <div class="prod-card">
+          <div class="prod-img"><img src="images/tension/page_04.png" alt="QYC Mono Jack" loading="lazy"><span class="prod-tag">Portable</span></div>
+          <div class="prod-body">
+            <h4>QYC Mono Jack</h4>
+            <p>Lightweight single-strand jack with auto-grip wedges. Perfect for high-altitude and confined-space work.</p>
+            <div class="prod-tags"><span>161&ndash;300kN</span><span>17&ndash;26.5 kg</span><span>&Phi;9.5&ndash;18mm Strand</span></div>
+            <a href="#specs" class="btn btn-outline-dark" style="font-size:0.82rem;padding:0.45rem 1rem;">View Specs &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECS -->
+  <section class="section" id="specs">
+    <div class="container">
+      <div class="label">Technical Specifications</div>
+      <h2 class="title">Detailed Parameters</h2>
+      <p class="subtitle">Select a product series to view full specifications. All data from our certified product catalog.</p>
+      <div class="tabs" id="specTabs">
+        <button class="tab-btn active" data-tab="tstq">TSTQ/STQ Synchronous</button>
+        <button class="tab-btn" data-tab="cll">CLL Lock Nut</button>
+        <button class="tab-btn" data-tab="rrh">RRH Hollow</button>
+        <button class="tab-btn" data-tab="qyc">QYC Mono Jack</button>
+      </div>
+      <!-- TSTQ -->
+      <div class="tab-panel active" id="tstq">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Model</th><th>Tons</th><th>Stroke</th><th>Closed Ht</th><th>Ext Ht</th><th>Outer Dia</th><th>Rod Dia</th><th>Weight</th></tr></thead>
+          <tbody>
+            <tr><td>TSTQ 320/200</td><td>320</td><td>200</td><td>410</td><td>610</td><td>320</td><td>180</td><td>258</td></tr>
+            <tr><td>TSTQ 400/200</td><td>400</td><td>200</td><td>460</td><td>660</td><td>375</td><td>200</td><td>264</td></tr>
+            <tr><td>TSTQ 500/200</td><td>500</td><td>200</td><td>460</td><td>660</td><td>430</td><td>200</td><td>420</td></tr>
+            <tr><td>TSTQ 630/200</td><td>630</td><td>200</td><td>517</td><td>717</td><td>500</td><td>250</td><td>696</td></tr>
+            <tr><td>TSTQ 800/200</td><td>800</td><td>200</td><td>598</td><td>798</td><td>560</td><td>300</td><td>1040</td></tr>
+            <tr><td>TSTQ 1000/200</td><td>1000</td><td>200</td><td>620</td><td>820</td><td>610</td><td>320</td><td>1337</td></tr>
+            <tr><td>TSTQ 1200/200</td><td>1200</td><td>200</td><td>640</td><td>840</td><td>670</td><td>380</td><td>1647</td></tr>
+            <tr><td>TSTQ 1500/200</td><td>1500</td><td>200</td><td>670</td><td>870</td><td>750</td><td>400</td><td>2140</td></tr>
+            <tr><td>TSTQ 2000/200</td><td>2000</td><td>200</td><td>720</td><td>920</td><td>860</td><td>480</td><td>3088</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">All models rated at <strong>63 MPa</strong>. Stroke options: 100, 160, 250, 300, 400, 500mm. Pump stations: 1.5&ndash;18kW.</p>
+      </div>
+      <!-- CLL -->
+      <div class="tab-panel" id="cll">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Model</th><th>Tons</th><th>Stroke</th><th>Cyl Area</th><th>Oil Cap</th><th>Closed Ht</th><th>Ext Ht</th><th>Dia</th><th>Weight</th></tr></thead>
+          <tbody>
+            <tr><td>CLL-502</td><td>50</td><td>50</td><td>71.3</td><td>356.5</td><td>164</td><td>214</td><td>125</td><td>16</td></tr>
+            <tr><td>CLL-504</td><td>50</td><td>100</td><td>71.3</td><td>713</td><td>214</td><td>314</td><td>125</td><td>21</td></tr>
+            <tr><td>CLL-506</td><td>50</td><td>150</td><td>71.3</td><td>1069.5</td><td>264</td><td>414</td><td>125</td><td>26</td></tr>
+            <tr><td>CLL-1002</td><td>100</td><td>50</td><td>133.3</td><td>666.5</td><td>187</td><td>237</td><td>165</td><td>31</td></tr>
+            <tr><td>CLL-1006</td><td>100</td><td>150</td><td>133.3</td><td>1999.5</td><td>287</td><td>437</td><td>165</td><td>48</td></tr>
+            <tr><td>CLL-10010</td><td>100</td><td>250</td><td>133.3</td><td>3332.5</td><td>387</td><td>637</td><td>165</td><td>65</td></tr>
+            <tr><td>CLL-1506</td><td>150</td><td>150</td><td>198</td><td>2970</td><td>309</td><td>459</td><td>205</td><td>78</td></tr>
+            <tr><td>CLL-2002</td><td>200</td><td>50</td><td>266.5</td><td>1332.5</td><td>243</td><td>293</td><td>250</td><td>83</td></tr>
+            <tr><td>CLL-20010</td><td>200</td><td>250</td><td>266.5</td><td>6662.5</td><td>443</td><td>693</td><td>250</td><td>153</td></tr>
+            <tr><td>CLL-5002</td><td>565</td><td>50</td><td>730</td><td>3650</td><td>375</td><td>425</td><td>400</td><td>367</td></tr>
+            <tr><td>CLL-50010</td><td>565</td><td>250</td><td>730</td><td>18250</td><td>575</td><td>825</td><td>400</td><td>568</td></tr>
+            <tr><td>CLL-10002</td><td>1080</td><td>50</td><td>1465</td><td>7325</td><td>495</td><td>545</td><td>560</td><td>951</td></tr>
+            <tr><td>CLL-100010</td><td>1080</td><td>250</td><td>1465</td><td>36625</td><td>695</td><td>945</td><td>560</td><td>1335</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Full range: 50, 100, 150, 200, 280, 350, 430, 565, 660, 880, 1080T. Mechanical lock nut for sustained load holding. Safe for underwater operation.</p>
+      </div>
+      <!-- RRH -->
+      <div class="tab-panel" id="rrh">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Model</th><th>Tons</th><th>Stroke</th><th>Closed Ht</th><th>Ext Ht</th><th>Outer Dia</th><th>Hole</th><th>Weight</th></tr></thead>
+          <tbody>
+            <tr><td>RRH-307</td><td>30</td><td>178</td><td>330</td><td>508</td><td>114</td><td>33.3</td><td>22</td></tr>
+            <tr><td>RRH-3010</td><td>30</td><td>257</td><td>432</td><td>689</td><td>114</td><td>33.3</td><td>27</td></tr>
+            <tr><td>RRH-606</td><td>60</td><td>165</td><td>324</td><td>489</td><td>159</td><td>53.8</td><td>35</td></tr>
+            <tr><td>RRH-6010</td><td>60</td><td>257</td><td>438</td><td>695</td><td>159</td><td>53.8</td><td>46</td></tr>
+            <tr><td>RRH-1003</td><td>100</td><td>76</td><td>254</td><td>330</td><td>213</td><td>79.2</td><td>61</td></tr>
+            <tr><td>RRH-10010</td><td>100</td><td>257</td><td>460</td><td>718</td><td>213</td><td>79.2</td><td>107</td></tr>
+            <tr><td>RRH-1508</td><td>150</td><td>203</td><td>349</td><td>552</td><td>248</td><td>79.5</td><td>111</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Double acting hollow design. Manual or electric pump compatible. Full model range: 30&ndash;150T.</p>
+      </div>
+      <!-- QYC -->
+      <div class="tab-panel" id="qyc">
+        <div class="table-wrap"><table>
+          <thead><tr><th>Model</th><th>Tension (kN)</th><th>Pressure (MPa)</th><th>Piston Area</th><th>Hole</th><th>Stroke</th><th>Weight</th><th>Strand</th></tr></thead>
+          <tbody>
+            <tr><td>QYC160/56-200</td><td>161</td><td>56</td><td>2.88&times;10&#8315;&sup3;</td><td>&Phi;17.5</td><td>200</td><td>17</td><td>&Phi;15</td></tr>
+            <tr><td>QYC250QX-200</td><td>250</td><td>52</td><td>4.771&times;10&#8315;&sup3;</td><td>&Phi;19</td><td>200</td><td>24</td><td>&Phi;9.5&ndash;15</td></tr>
+            <tr><td>QYC300QX-200</td><td>300</td><td>48</td><td>6.263&times;10&#8315;&sup3;</td><td>&Phi;19</td><td>200</td><td>26</td><td>&Phi;15</td></tr>
+            <tr><td>QYC300/50-200</td><td>300</td><td>51</td><td>5.891&times;10&#8315;&sup3;</td><td>&Phi;20</td><td>200</td><td>26.5</td><td>&Phi;18</td></tr>
+          </tbody>
+        </table></div>
+        <p class="table-note">Lightweight portable design. Built-in reusable tool anchor. Return oil pressure &lt;25 MPa. Steel strand reserved length: 280mm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="section section-alt" id="advantages">
+    <div class="container">
+      <div class="label">Why GAODETEC</div>
+      <h2 class="title">Built Different</h2>
+      <p class="subtitle">What separates our equipment from commodity hydraulic jacks.</p>
+      <div class="adv-grid">
+        <div class="adv-card"><div class="adv-icon">&#9881;</div><h4>Custom Engineering</h4><p>Jacks built to your exact stroke, capacity, and dimensional requirements.</p></div>
+        <div class="adv-card"><div class="adv-icon">&#128230;</div><h4>Rapid Delivery</h4><p>Standard models ship in 2&ndash;4 weeks. Custom builds in 6&ndash;8 weeks.</p></div>
+        <div class="adv-card"><div class="adv-icon">&#128270;</div><h4>125% Load Tested</h4><p>Every jack undergoes full pressure testing with certification documentation.</p></div>
+        <div class="adv-card"><div class="adv-icon">&#128295;</div><h4>Spare Parts Included</h4><p>Seal kits, hoses, and maintenance manuals shipped with every order.</p></div>
+        <div class="adv-card"><div class="adv-icon">&#128249;</div><h4>Remote Support</h4><p>Video commissioning support and 24/7 technical hotline for field teams.</p></div>
+        <div class="adv-card"><div class="adv-icon">&#127758;</div><h4>Global Logistics</h4><p>Serving 50+ countries with reliable freight and customs documentation.</p></div>
+        <div class="adv-card"><div class="adv-icon">&#128220;</div><h4>Full Traceability</h4><p>Material certs, test reports, and inspection records for every serial number.</p></div>
+        <div class="adv-card"><div class="adv-icon">&#9889;</div><h4>Factory Direct</h4><p>Competitive pricing without middlemen. Same quality, lower cost.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section section-dark" id="applications">
+    <div class="container">
+      <div class="label">Applications</div>
+      <h2 class="title title-light">Where Our Jacks Work</h2>
+      <p class="subtitle subtitle-light">Deployed on critical infrastructure projects across the globe.</p>
+      <div class="apps-grid">
+        <div class="app-item"><span class="emoji">&#127753;</span><span>Bridge Construction</span></div>
+        <div class="app-item"><span class="emoji">&#127747;</span><span>High-Rise Buildings</span></div>
+        <div class="app-item"><span class="emoji">&#127754;</span><span>Offshore Platforms</span></div>
+        <div class="app-item"><span class="emoji">&#9883;</span><span>Nuclear Facilities</span></div>
+        <div class="app-item"><span class="emoji">&#127981;</span><span>Stadium Roofs</span></div>
+        <div class="app-item"><span class="emoji">&#128736;</span><span>Heavy Machinery</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="label">Gallery</div>
+      <h2 class="title">Equipment Showcase</h2>
+      <p class="subtitle">Click any image to view full size.</p>
+      <div class="gal-grid" id="galleryGrid">
+        <div class="gal-item"><img src="images/cll/cll_01.jpg" alt="CLL Series - 26 units" loading="lazy"></div>
+        <div class="gal-item"><img src="images/cll/cll_02.jpg" alt="CLL Series - stacked" loading="lazy"></div>
+        <div class="gal-item"><img src="images/cll/cll_03.jpg" alt="CLL Series - 4 sizes" loading="lazy"></div>
+        <div class="gal-item"><img src="images/cll/cll_04.jpg" alt="CLL Series - variation" loading="lazy"></div>
+        <div class="gal-item"><img src="images/cll/cll_05.jpg" alt="CLL Series - lineup" loading="lazy"></div>
+        <div class="gal-item"><img src="images/hydraulic/page_01.png" alt="Hydraulic Jack & Pump" loading="lazy"></div>
+        <div class="gal-item"><img src="images/hydraulic/page_04.png" alt="Flange Jack" loading="lazy"></div>
+        <div class="gal-item"><img src="images/hydraulic/page_07.png" alt="RRH Hollow Jack" loading="lazy"></div>
+        <div class="gal-item"><img src="images/tension/page_01.png" alt="Stressing Jack" loading="lazy"></div>
+        <div class="gal-item"><img src="images/tension/page_04.png" alt="QYC Mono Jack" loading="lazy"></div>
+        <div class="gal-item"><img src="images/tension/page_05.png" alt="Embossing Machine" loading="lazy"></div>
+        <div class="gal-item"><img src="images/tension/page_06.png" alt="Heading Machine" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRY -->
+  <section class="section section-alt" id="inquiry">
+    <div class="container">
+      <div class="label">Get a Quote</div>
+      <h2 class="title">Start Your Project</h2>
+      <p class="subtitle">Three ways to reach us. We respond within 24 hours.</p>
+      <div class="inq-grid">
+        <div class="form-card">
+          <form id="inquiryForm" method="POST">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-row"><label>Full Name *</label><input type="text" name="name" id="fname" placeholder="Your name" required></div>
+              <div class="form-row"><label>Email *</label><input type="email" name="email" id="femail" placeholder="you@company.com" required></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-row"><label>Company</label><input type="text" name="company" id="fcompany" placeholder="Your company"></div>
+              <div class="form-row"><label>Phone / WhatsApp</label><input type="text" name="phone" id="fphone" placeholder="+86 199 1380 3808"></div>
+            </div>
+            <div class="form-row">
+              <label>Product Interest *</label>
+              <select name="product" id="fproduct" required>
+                <option value="">Select a product</option>
+                <option value="TSTQ Synchronous Jack (320-2000T)">TSTQ/STQ Synchronous Jack (320-2000T)</option>
+                <option value="CLL Lock Nut Jack (50-1080T)">CLL Lock Nut Jack (50-1080T)</option>
+                <option value="RRH Hollow Jack (30-150T)">RRH Hollow Jack (30-150T)</option>
+                <option value="Flange Hydraulic Jack">Flange Hydraulic Jack</option>
+                <option value="Multi-Strand Stressing Jack">Multi-Strand Stressing Jack</option>
+                <option value="QYC Mono Jack">QYC Mono Jack</option>
+                <option value="YH3 Embossing Machine">YH3 Embossing Machine</option>
+                <option value="LD Heading Machine">LD Heading Machine</option>
+                <option value="Multiple Products">Multiple Products</option>
+              </select>
+            </div>
+            <div class="form-row"><label>Required Capacity / Specifications</label><input type="text" name="capacity" id="fcapacity" placeholder="e.g. 500T, 200mm stroke, qty 4"></div>
+            <div class="form-row"><label>Project Details</label><textarea name="message" id="fmessage" placeholder="Describe your application, timeline, and any special requirements..."></textarea></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Inquiry &rarr;</button>
+          </form>
+          <p id="formStatus" style="display:none;margin-top:1rem;padding:0.75rem;border-radius:6px;font-weight:600;font-size:0.9rem;"></p>
+        </div>
+        <div class="contact-card">
+          <h4>Direct Contact</h4>
+          <p>Prefer to reach us directly? Call, WhatsApp, or email &mdash; our team is ready.</p>
+          <a href="tel:+8619913803808" style="text-decoration:none;">
+            <div class="contact-row" style="cursor:pointer;"><div class="icon">&#9742;</div><div style="color:#fff;">+86 199 1380 3808</div></div>
+          </a>
+          <a href="https://wa.me/8619913803808" target="_blank" style="text-decoration:none;">
+            <div class="contact-row" style="cursor:pointer;margin-top:0.5rem;"><div class="icon" style="background:#25D366;color:#fff;">&#9990;</div><div style="color:#fff;font-weight:600;">Chat on WhatsApp</div></div>
+          </a>
+          <a href="mailto:judy@gaodetec.com" style="text-decoration:none;">
+            <div class="contact-row" style="cursor:pointer;margin-top:0.5rem;"><div class="icon">&#9993;</div><div style="color:#fff;">judy@gaodetec.com</div></div>
+          </a>
+          <div class="contact-row" style="margin-top:0.5rem;"><div class="icon">&#127968;</div><div style="color:rgba(255,255,255,0.6);">GAODETEC, China</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="brand">GAODETEC</div>
+    <p>Professional hydraulic jack manufacturer &mdash; TSTQ synchronous jacks, CLL lock nut jacks, RRH hollow jacks, post-tensioning systems, and more. ISO 9001 &middot; CE &middot; SGS &middot; TUV certified.</p>
+    <p style="margin-top:0.5rem;">&copy; 2026 GAODETEC. All rights reserved.</p>
+  </footer>
+
+  <div class="toast" id="toast">Inquiry sent! We'll respond within 24 hours.</div>
+
+  <script>
+    // Mobile nav
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function(l) {
+      l.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); });
+    });
+
+    // Tabs
+    var tabs = document.querySelectorAll('#specTabs .tab-btn');
+    tabs.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        tabs.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Lightbox
+    (function() {
+      var items = document.querySelectorAll('#galleryGrid .gal-item img');
+      var lb = document.createElement('div'); lb.className = 'lightbox';
+      lb.innerHTML = '<button class="close">&times;</button><button class="nav-btn prev">&lsaquo;</button><button class="nav-btn next">&rsaquo;</button><img src="" alt="">';
+      document.body.appendChild(lb);
+      var lbImg = lb.querySelector('img'), idx = 0;
+      function show(i) { idx = ((i % items.length) + items.length) % items.length; lbImg.src = items[idx].src; lb.classList.add('active'); document.body.style.overflow = 'hidden'; }
+      items.forEach(function(img, i) { img.parentElement.addEventListener('click', function() { show(i); }); });
+      lb.querySelector('.close').addEventListener('click', function() { lb.classList.remove('active'); document.body.style.overflow = ''; });
+      lb.querySelector('.prev').addEventListener('click', function(e) { e.stopPropagation(); show(idx - 1); });
+      lb.querySelector('.next').addEventListener('click', function(e) { e.stopPropagation(); show(idx + 1); });
+      lb.addEventListener('click', function(e) { if (e.target === lb) { lb.classList.remove('active'); document.body.style.overflow = ''; } });
+      document.addEventListener('keydown', function(e) {
+        if (!lb.classList.contains('active')) return;
+        if (e.key === 'Escape') { lb.classList.remove('active'); document.body.style.overflow = ''; }
+        if (e.key === 'ArrowLeft') show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+    })();
+
+    // Form - real submission
+    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = this.querySelector('button');
+      var status = document.getElementById('formStatus');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      var data = new FormData(this);
+      data.append('_subject', 'GAODETEC Inquiry: ' + data.get('product'));
+      data.append('_replyto', data.get('email'));
+
+      // Try Formspree first (free service, set up at formspree.io)
+      fetch('https://formspree.io/f/mvgkdjyk', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+        .then(function(r) {
+          if (r.ok) {
+            status.style.display = 'block';
+            status.style.background = '#ECFDF5';
+            status.style.color = '#059669';
+            status.textContent = 'Inquiry sent successfully! We will reply to ' + data.get('email') + ' within 24 hours.';
+            document.getElementById('inquiryForm').reset();
+          } else {
+            throw new Error('formspree fail');
+          }
+        })
+        .catch(function() {
+          // Fallback: open mail client
+          var subject = 'GAODETEC Inquiry: ' + data.get('product');
+          var body = 'Name: ' + data.get('name') + '%0D%0A' +
+                     'Email: ' + data.get('email') + '%0D%0A' +
+                     'Company: ' + data.get('company') + '%0D%0A' +
+                     'Phone: ' + data.get('phone') + '%0D%0A' +
+                     'Product: ' + data.get('product') + '%0D%0A' +
+                     'Capacity: ' + data.get('capacity') + '%0D%0A' +
+                     'Message: ' + data.get('message');
+          window.open('mailto:judy@gaodetec.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
+          status.style.display = 'block';
+          status.style.background = '#FFF7ED';
+          status.style.color = '#C2410C';
+          status.textContent = 'Opening your email client... If nothing happens, please email us directly at judy@gaodetec.com';
+          document.getElementById('inquiryForm').reset();
+        })
+        .finally(function() {
+          btn.textContent = 'Send Inquiry →';
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        });
+    });
+  </script>
+</body>
+</html>
